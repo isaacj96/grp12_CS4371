@@ -10,7 +10,7 @@ This code relies on pandas, numpy, sklearn, tensorflow, and keras
 
 ## How to Run
 
-The code for the project is contained within the 'G12.ipynb' notebook and 'classical.py' script. Since the notebook uses deep learning, which is very computationally heavy, it we suggest the use of a TPU, which we ran using Google Colab. The classical.py script on the other hand can be run using any python interpreter and take slightly less time then the use of G12.ipynb. 
+The code for the project is contained within the 'G12.ipynb' notebook and 'classical.py' script. Since the notebook uses deep learning, which is very computationally heavy, we suggest the use of a TPU, which we ran using Google Colab. The classical.py script on the other hand can be run using any python interpreter and take slightly less time then the use of G12.ipynb. 
 
 To do so, first download the classical.py script and and the data used to train the models (KDDTest+.csv and KDDTrain+.csv). Then, edit lines 34 and 35 of the script to point to the path of the datasets.
 
