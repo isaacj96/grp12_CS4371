@@ -20,8 +20,11 @@ from sklearn.metrics import confusion_matrix
 from sklearn.metrics import (precision_score, recall_score,f1_score, accuracy_score,mean_squared_error,mean_absolute_error, roc_curve, classification_report,auc)
 
 # Data is read with pandas
-trainset = pd.read_csv('/content/KDDTrain+.csv', header=0)
-testset = pd.read_csv('/content/KDDTest+.csv', header=0)
+#trainset = pd.read_csv('KDD99Train.csv', header=0)
+#testset = pd.read_csv('KDD99Test.csv', header=0)
+
+trainset = pd.read_csv('KDDTrain+.csv', header=0)
+testset = pd.read_csv('KDDTest+.csv', header=0)
 
 # Assign Binary Classification Value
 trainset["class"] = 1 # class is 1 if label is 'normal'
@@ -30,8 +33,8 @@ testset["class"] = 1
 testset.loc[testset["label"] == "normal", "class"] = 0
 
 # Drop the string label as replaced by the binary label
-train = trainset.drop("label", 1)
-test = testset.drop("label", 1)
+train = trainset.drop("label", axis = 1)
+test = testset.drop("label", axis = 1)
 
 train = pd.get_dummies(train)
 test = pd.get_dummies(test)
@@ -47,9 +50,9 @@ for different in differences:
         train[different] = 0
 
 # test and train sets are normalized and fitted to fit into 2-D arrays
-X = train.drop("class", 1)
+X = train.drop("class", axis = 1)
 Y = train["class"]
-T = test.drop("class", 1)
+T = test.drop("class", axis = 1)
 C = test["class"]
 
 scaler = Normalizer().fit(X)
